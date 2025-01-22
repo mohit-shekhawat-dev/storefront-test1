@@ -55,7 +55,7 @@ export default async function decorate(block) {
         </div>
         <div class="product-details__description"></div>
         <div class="product-details__attributes"></div>
-        <div class="product-details__attributes-text">text</div>
+        <div class="text">text</div>
       </div>
     </div>
   `);
