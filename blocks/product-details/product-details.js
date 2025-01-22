@@ -56,6 +56,10 @@ export default async function decorate(block) {
         <div class="product-details__description"></div>
         <div class="product-details__attributes"></div>
         <div class="text">text</div>
+        <div class="product-details__used-in">
+          <h3>Where Used:</h3>
+          <p class="product-details__used-in-text"></p>
+        </div>
       </div>
     </div>
   `);
@@ -72,8 +76,17 @@ export default async function decorate(block) {
   const $addToWishlist = fragment.querySelector('.product-details__buttons__add-to-wishlist');
   const $description = fragment.querySelector('.product-details__description');
   const $attributes = fragment.querySelector('.product-details__attributes');
+  const $usedInText = fragment.querySelector('.product-details__used-in-text');
 
   block.appendChild(fragment);
+
+  if (product?.used_in) {
+    // Render the `used_in` attribute
+    $usedInText.textContent = product.used_in;
+  } else {
+    // If the attribute is not set, provide a fallback message
+    $usedInText.textContent = 'No information available.';
+  }
 
   // Alert
   let inlineAlert = null;
