@@ -79,13 +79,13 @@ export default async function decorate(block) {
   const $usedInText = fragment.querySelector('.product-details__used-in-text');
 
   block.appendChild(fragment);
-
+  console.log('Product Data:', product);
   if (product?.used_in) {
     // Render the `used_in` attribute
     $usedInText.textContent = product.used_in;
   } else {
     // If the attribute is not set, provide a fallback message
-    $usedInText.textContent = product;
+    $usedInText.textContent = 'No information available.';
   }
 
   // Alert
