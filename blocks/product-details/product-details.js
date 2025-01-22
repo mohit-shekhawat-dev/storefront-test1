@@ -85,7 +85,7 @@ export default async function decorate(block) {
     $usedInText.textContent = product.used_in;
   } else {
     // If the attribute is not set, provide a fallback message
-    $usedInText.textContent = 'No information available.';
+    $usedInText.textContent = product;
   }
 
   // Alert
